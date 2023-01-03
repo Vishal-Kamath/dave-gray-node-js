@@ -1,21 +1,8 @@
-// video 2
-const fsPromises = require('fs').promises;
-const path = require('path');
+const {format} = require('date-fns');
+const { v4: uuid } = require('uuid');
 
-const fileOps = async () => {
-  try {
-    const data = await fsPromises.readFile(path.join(__dirname, 'files', 'starter.txt'), 'utf8');
-    console.log(data);
-    await fsPromises.unlink(path.join(__dirname, 'files', 'starter.txt')); // deletes the file
+console.log(format(new Date(), 'yyyyMMdd\tHH:mm:ss'));
+console.log(uuid());
 
-    await fsPromises.writeFile(path.join(__dirname, 'files', 'promiseWrite.txt'), data);
-    await fsPromises.appendFile(path.join(__dirname, 'files', 'promiseWrite.txt'), '\n\nNice to meet you');
-    await fsPromises.rename(path.join(__dirname, 'files', 'promiseWrite.txt'), path.join(__dirname, 'files', 'promiseComplete.txt'));
-    const newData = await fsPromises.readFile(path.join(__dirname, 'files', 'promiseComplete.txt'), 'utf8');
-    console.log(newData);
-  } catch(err) {
-    console.log(err);
-  }
-}
 
-fileOps();
+// npm update - to check update for all packages
