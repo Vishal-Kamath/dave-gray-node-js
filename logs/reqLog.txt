@@ -1,0 +1,5 @@
+20230103	19:20:29	38c0c58c-ce60-482c-9cfc-7ef6c52e47da	/new-page.html	GET
+20230103	19:20:29	7a5fef3a-601a-40a0-8b10-b132cb36adcd	/css/style.css	GET
+20230103	19:20:29	378c6a77-245d-413a-9ff0-442f747c2f09	/img/img1.jpg	GET
+20230103	19:20:29	884af87f-4472-454b-ba79-4a08646971ff	/favicon.ico	GET
+20230103	19:21:20	d6d3fd22-24b0-4970-aacd-f28aa9608f31	/new-page.html	GET
