@@ -74,10 +74,16 @@ const three = (req, res, next) => {
 
 app.get('/chain(.html)?' , [one, two, three]);
 
-
-app.get('/*', (req, res) => {
+// means any thing that made it hear should show 404
+app.all('*', (req, res) => {
   res.status(404)
-  res.sendFile(path.join(__dirname, 'views', '404.html'));
+  if(req.accepts('html')) {
+    res.sendFile(path.join(__dirname, 'views', '404.html'));
+  } else if(req.accepts('json')) {
+    res.json({error: '404 not found'});
+  } else {
+    res.type(txt).send('404 not found');
+  }
 });
 
 
