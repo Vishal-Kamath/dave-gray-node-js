@@ -1,11 +1,29 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 const {logger} = require('./middleware/logEvents');
+const errorHandler = require('./middleware/errorHandler');
 const PORT = process.env.PORT || 3500;
 
 // Custom Middleware logger
 app.use(logger);
+
+// CORS - Cross Origin Resource Sharing
+// currently accesible by anybody this is suited for public api's where anyone can access it
+// create a whitelist to ristrict access only to the urls in whitelist
+const whitelist = ['https://www.youtube.com', 'http://localhost:3000', 'http://localhost:3000']; // only these can access 
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1 || !origin) { //inculded in white list or origin is undefined
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by cors'));
+    }
+  },
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // Middleware
 // built in middleware to handle urlencoded data
@@ -61,6 +79,10 @@ app.get('/*', (req, res) => {
   res.status(404)
   res.sendFile(path.join(__dirname, 'views', '404.html'));
 });
+
+
+// ERROR handling
+app.use(errorHandler)
 
 
 app.listen(PORT, () => console.log(`Server start on port ${PORT}`));
