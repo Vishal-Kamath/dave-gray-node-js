@@ -35,44 +35,15 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // server static files
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/',express.static(path.join(__dirname, '/public'))); // '/' request for static files comming to this will use this subdirectory it is / by default
+app.use('/subdir', express.static(path.join(__dirname, '/public'))); // request comming to '/subdir will use this public folder
 // makes static files available to public
 // search localhost:3500/css/style.css
 
-app.get('^/$|/index(.html)?' , (req, res) => { 
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
-
-app.get('/new-page(.html)?' , (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'new-page.html'));
-});
-
-app.get('/old-page(.html)?' , (req, res) => {
-  res.redirect(301, '/new-page.html');
-});
-
-app.get('/hello(.html)?', (req, res, next) => {
-  console.log('attempted to call hello.html');
-  next();
-}, (req, res) => {
-  res.send('Hello World');
-});
-
-
-const one = (req, res, next) => {
-  console.log('one');
-  next();
-} 
-const two = (req, res, next) => {
-  console.log('two');
-  next();
-} 
-const three = (req, res, next) => {
-  console.log('three');
-  res.send('Finished');
-} 
-
-app.get('/chain(.html)?' , [one, two, three]);
+// router
+app.use('/', require('./routes/root')); 
+app.use('/subdir', require('./routes/subdir')); // routes any request coming to the subdirectory to the router 
+app.use('/employees', require('./routes/api/employees')); 
 
 // means any thing that made it hear should show 404
 app.all('*', (req, res) => {
