@@ -2,3 +2,7 @@
 20230104	13:01:27	faa0fd69-2a8b-4c6c-a0c6-0aead3ba605c	Error: Not allowed by cors
 20230104	22:25:12	9828db4d-3588-42d3-8822-65f737b3049e	SyntaxError: Unexpected token } in JSON at position 37
 20230104	22:25:46	3514b30e-af3f-4e6f-acb2-1f26dd1c3d71	SyntaxError: Unexpected token } in JSON at position 13
+20230105	18:15:16	f61dfac9-2196-4ace-b7c9-e0a5dae6e3a8	TypeError: res.headers is not a function
+20230105	18:16:00	3382f02f-e808-48a8-b83b-a77f9b46e3dc	TypeError: authHeader.split is not a function
+20230105	18:16:45	a2fe9272-8424-4ebc-9603-0bf2eda8c1c9	TypeError: req.headers is not a function
+20230105	18:39:04	79c52117-f94f-4fff-8811-22033d444678	TypeError: console.lof is not a function
