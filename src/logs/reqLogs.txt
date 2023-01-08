@@ -1,0 +1,5 @@
+08-Jan-2023	20:48:48	9a1fc066-93e0-4ae3-b673-287e45b48987	start
+08-Jan-2023	20:50:20	30ab934b-4b65-4fdc-8c1e-debd4b345ecb	GET	undefined	/
+08-Jan-2023	20:50:20	c74eff10-11da-443f-886f-f4a7cd3047fb	GET	undefined	/css/style.css
+08-Jan-2023	20:54:45	8addf34b-94f6-42d4-95b3-b9a05413bb9d	GET	undefined	/
+08-Jan-2023	20:54:45	066be83e-58d0-4f44-a0a5-2e621faa9adf	GET	undefined	/css/style.css
