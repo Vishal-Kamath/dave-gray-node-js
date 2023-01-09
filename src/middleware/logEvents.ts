@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import crypto from 'crypto';
 import { Request, Response, NextFunction } from 'express';
 
+// main function to log events
 const logEvents = async (
   message: string,
   logFileName: 'reqLogs.txt' | 'errLogs.txt'
@@ -21,6 +22,7 @@ const logEvents = async (
   }
 };
 
+// log request in reqLogs.txt
 export const requestLogger = (
   req: Request,
   res: Response,
@@ -33,6 +35,21 @@ export const requestLogger = (
   next();
 };
 
+// log errors in errLogs.txt
 export const errorLogger = (err: any) => {
   logEvents(`\n${err.stack}\n\n`, 'errLogs.txt');
+};
+
+// handle express errors and log it to errLogs.txt
+export const errorHandler = (
+  err: Error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  logEvents(
+    `\t${req.method}\t${req.headers.origin}\t${req.url}\n${err.stack}\n\n`,
+    'errLogs.txt'
+  );
+  res.status(500).send(err.message);
 };

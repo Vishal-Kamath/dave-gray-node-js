@@ -1,0 +1,66 @@
+09-Jan-2023	11:01:27	c3490429-af6a-4a8c-8db5-cc40d469be1b
+Error: not allowed by cors
+    at origin (D:\projects\dave-gray\node-js\src\server.ts:30:16)
+    at D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:328:13)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
+
+09-Jan-2023	11:01:27	8d775e82-94d1-46ed-8518-d31e6a933dc0
+Error: not allowed by cors
+    at origin (D:\projects\dave-gray\node-js\src\server.ts:30:16)
+    at D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:328:13)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
+
+09-Jan-2023	14:26:39	904acc28-e431-4bf8-a87a-d18ef45dca81
+Error: not allowed by CORS
+    at origin (D:\projects\dave-gray\node-js\src\server.ts:34:47)
+    at D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:328:13)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
+
+09-Jan-2023	14:29:32	0791e4f4-e1f9-4a22-8d49-1c79f6d83447	GET	undefined	/
+
+    Error: not allowed by CORS
+    at origin (D:\projects\dave-gray\node-js\src\server.ts:34:47)
+    at D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:328:13)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
+
+09-Jan-2023	14:30:34	1e3391b3-35a6-40d0-8380-743d22cde599	GET	undefined	/
+Error: not allowed by CORS
+    at origin (D:\projects\dave-gray\node-js\src\server.ts:34:47)
+    at D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\projects\dave-gray\node-js\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:328:13)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
+
