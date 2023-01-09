@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import validateResource from '../../middleware/validateResource';
+import { verifyJwt } from '../../middleware/verifyJwt';
 import * as employeesController from './../../controllers/employees.controller';
 import {
   employeeSchema,

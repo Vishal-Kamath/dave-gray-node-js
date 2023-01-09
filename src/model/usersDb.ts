@@ -25,8 +25,8 @@ export const userDb: UserDb = {
     try {
       this.users = data;
       await fsPromises.writeFile(
-        path.join(__dirname, '..', 'model', 'user.json'),
-        JSON.stringify(userDb.users)
+        path.join(__dirname, 'user.json'),
+        JSON.stringify(data)
       );
     } catch (err) {
       errorLogger(err);

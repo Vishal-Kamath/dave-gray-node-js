@@ -1,7 +1,9 @@
+import { errorLogger } from './../middleware/logEvents';
 import { User, userDb } from '../model/usersDb';
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import { ReqUserNamePwd } from '../schema/user.schema';
+import jwt from 'jsonwebtoken';
 
 export const handleLogin = async (
   req: Request<{}, {}, ReqUserNamePwd['body']>,
@@ -16,8 +18,47 @@ export const handleLogin = async (
   // evaluate password
   const match = await bcrypt.compare(password, foundUser.password);
   if (match) {
-    // note create JWT
-    res.json({ success: `User ${username} is logged in` });
+    // create JWT
+
+    // Access Token
+    const access_private = process.env.ACCESS_SECRET_PRIVATE;
+    if (!access_private) {
+      errorLogger(new Error('access token private key undefined'));
+      return res.sendStatus(500);
+    }
+    const accessToken = jwt.sign(
+      { username: foundUser.username },
+      access_private,
+      { expiresIn: '30s', algorithm: 'RS256' }
+    );
+
+    // Refresh Token
+    const refresh_private = process.env.REFRESH_SECRET_PRIVATE;
+    if (!refresh_private) {
+      errorLogger(new Error('refresh token private key undefined'));
+      return res.sendStatus(500);
+    }
+    const refreshToken = jwt.sign(
+      { username: foundUser.username },
+      access_private,
+      { expiresIn: '1d', algorithm: 'RS256' }
+    );
+    const currentUser: User = {
+      ...foundUser,
+      refreshToken,
+    };
+
+    // saving refresh token with user
+    const newUsersdb = userDb.users.map((user) =>
+      user.username !== foundUser.username ? user : currentUser
+    );
+    userDb.setUsers(newUsersdb);
+
+    res.cookie('jwt', refreshToken, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+    res.json({ accessToken });
   } else {
     res.sendStatus(401); // Unauthorized
   }

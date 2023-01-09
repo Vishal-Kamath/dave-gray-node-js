@@ -623,3 +623,71 @@ ZodError: [
     at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
     at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
 
+09-Jan-2023	21:00:54	6c161d40-f788-48fd-8b74-79f4dc717a88
+ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "firstname"
+    ],
+    "message": "firstname is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "lastname"
+    ],
+    "message": "lastname is required"
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:9:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+
+09-Jan-2023	21:15:39	c36915c4-7d71-4064-94e9-0899616d6fa1
+ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "firstname"
+    ],
+    "message": "firstname is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "lastname"
+    ],
+    "message": "lastname is required"
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:9:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+

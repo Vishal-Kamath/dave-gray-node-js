@@ -1,7 +1,7 @@
-import { userNamePwdSchema } from './../../schema/user.schema';
+import { userNamePwdSchema } from '../../schema/user.schema';
 import express from 'express';
 import validateResource from '../../middleware/validateResource';
-import * as registerController from './../../controllers/reqister.controller';
+import * as registerController from '../../controllers/reqister.controller';
 const router = express.Router();
 
 router.post(

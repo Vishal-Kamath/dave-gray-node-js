@@ -4,7 +4,8 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 // imports
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Application, Request, Response } from 'express';
+import { verifyJwt } from './middleware/verifyJwt';
 import { requestLogger } from './middleware/logEvents';
 import { errorHandler } from './middleware/logEvents';
 import { router as rootRouter } from './routes/root';
@@ -36,9 +37,11 @@ app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
 // Routes
 app.use('/', rootRouter);
-app.use('/employees', employeesRouter);
 app.use('/register', registerRouter);
 app.use('/auth', authRouter);
+
+app.use(verifyJwt);
+app.use('/employees', employeesRouter);
 
 // 404
 app.all('*', (req: Request, res: Response) => {
