@@ -24,9 +24,10 @@ export const handleLogout = (req: Request, res: Response) => {
 
   // delete cookie in db
   const currentUser: User = {
-    username: foundUser.username,
-    password: foundUser.password,
+    ...foundUser,
+    refreshToken: '',
   };
+
   const newUsersdb = userDb.users.map((user) =>
     user.username !== foundUser.username ? user : currentUser
   );

@@ -5,8 +5,8 @@ import path from 'path';
 
 export type User = {
   username: string;
-  roles?: {
-    User?: number;
+  roles: {
+    User: number;
     Editor?: number;
     Admin?: number;
   };

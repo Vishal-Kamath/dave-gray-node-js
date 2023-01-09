@@ -7,17 +7,26 @@ import {
   employeeNameSchema,
   employeeIdSchema,
 } from './../../schema/employee.schema';
+import { RolesList } from '../../config/roles_list';
+import verifyRoles from '../../middleware/verifyRoles';
+
 const router = express.Router();
 
 router
   .route('/')
   .get(employeesController.getAllEmployees)
   .post(
+    verifyRoles(RolesList.Admin, RolesList.Editor),
     validateResource(employeeNameSchema),
     employeesController.createNewEmployee
   )
-  .put(validateResource(employeeSchema), employeesController.updateEmplyee)
+  .put(
+    verifyRoles(RolesList.Admin, RolesList.Editor),
+    validateResource(employeeSchema),
+    employeesController.updateEmplyee
+  )
   .delete(
+    verifyRoles(RolesList.Admin),
     validateResource(employeeIdSchema),
     employeesController.deleteEmployee
   );

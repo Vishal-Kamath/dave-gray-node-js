@@ -18,6 +18,8 @@ export const handleLogin = async (
   // evaluate password
   const match = await bcrypt.compare(password, foundUser.password);
   if (match) {
+    const roles = Object.values(foundUser.roles);
+    console.log(roles);
     // create JWT
 
     // Access Token
@@ -27,7 +29,12 @@ export const handleLogin = async (
       return res.sendStatus(500);
     }
     const accessToken = jwt.sign(
-      { username: foundUser.username },
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles,
+        },
+      },
       access_private,
       { expiresIn: '30s', algorithm: 'RS256' }
     );

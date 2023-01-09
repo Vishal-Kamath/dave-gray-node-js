@@ -1,11 +1,19 @@
+import { Roles } from './../config/roles_list';
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import { errorLogger } from './logEvents';
+import { User } from '../model/usersDb';
 
-export const verifyJwt = (req: Request, res: Response, next: NextFunction) => {
+export type VerifyRequest = Request & { username?: string; roles?: number[] };
+
+export const verifyJwt = (
+  req: VerifyRequest,
+  res: Response,
+  next: NextFunction
+) => {
   const authHeader = (req.headers['authorization'] ||
     req.headers['Authorization']) as string;
-  if (!authHeader) return res.sendStatus(401); // Unauthorized
+  if (!authHeader?.startsWith('Bearer ')) return res.sendStatus(401); // Unauthorized
 
   // get token
   const token = authHeader.split(' ')[1];
@@ -18,8 +26,8 @@ export const verifyJwt = (req: Request, res: Response, next: NextFunction) => {
   }
   jwt.verify(token, access_public, (err, decoded: any) => {
     if (err) return res.sendStatus(403); // Forbidden
-    // @ts-ignore
-    req.username = decoded.username;
+    req.username = decoded.UserInfo.username;
+    res.locals.roles = decoded.UserInfo.roles;
     next();
   });
 };

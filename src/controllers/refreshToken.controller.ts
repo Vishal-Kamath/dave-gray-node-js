@@ -21,11 +21,11 @@ export const handleRefresh = (req: Request, res: Response) => {
     return res.sendStatus(500);
   }
   jwt.verify(refreshToken, refresh_public, (err, decoded: any) => {
-    console.log(err);
-    console.log(foundUser);
-    console.log(decoded);
     if (err || foundUser.username !== decoded.username)
       return res.sendStatus(403); // Forbidden
+
+    // roles
+    const roles = Object.values(foundUser.roles);
 
     // refresh token verified create access token
     // Access Token
@@ -35,7 +35,12 @@ export const handleRefresh = (req: Request, res: Response) => {
       return res.sendStatus(500);
     }
     const accessToken = jwt.sign(
-      { username: decoded.username },
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles,
+        },
+      },
       access_private,
       { expiresIn: '30s', algorithm: 'RS256' }
     );

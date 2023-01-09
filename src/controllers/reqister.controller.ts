@@ -19,6 +19,9 @@ export const handleNewUser = async (
     const hashedPwd = await bcrypt.hash(password, 10);
     const newUser: User = {
       username,
+      roles: {
+        User: 2001,
+      },
       password: hashedPwd,
     };
     userDb.setUsers([...userDb.users, newUser]);
