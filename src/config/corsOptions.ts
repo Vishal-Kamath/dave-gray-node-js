@@ -1,6 +1,9 @@
 import cors from 'cors';
 
-const allowedOrigins = ['http://localhost:3000', 'https://www.youtube.com'];
+export const allowedOrigins = [
+  'http://localhost:3000',
+  'https://www.youtube.com',
+];
 
 const node_env = process.env.NODE_ENV;
 const corsOptions: cors.CorsOptions = {

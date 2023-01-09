@@ -142,3 +142,8 @@
 09-Jan-2023	22:06:16	72601c21-2c30-4f58-90ce-f6e0c8ab66f1	GET	undefined	/refresh
 09-Jan-2023	22:06:22	b07bd2f0-aab5-4b28-9207-2281ebde7a96	GET	undefined	/refresh
 09-Jan-2023	22:06:23	90854a68-d44e-4b84-9465-507aa938cc90	GET	undefined	/refresh
+09-Jan-2023	22:19:29	3ab9d87f-725a-4abe-915d-b0378b290248	GET	undefined	/logout
+09-Jan-2023	22:19:56	96dcfa8f-6ed8-4c93-a923-a9859f6b3fd8	GET	undefined	/refresh
+09-Jan-2023	22:20:22	1d71789e-cba6-4227-ad1d-4a51b8d25f25	GET	undefined	/auth
+09-Jan-2023	22:20:27	efb3d382-a497-41d2-8ed9-19b1e8877dba	GET	undefined	/auth
+09-Jan-2023	22:20:30	31858c09-6d26-4041-92e9-4c0cbd186590	POST	undefined	/auth

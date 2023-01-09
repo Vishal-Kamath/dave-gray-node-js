@@ -13,9 +13,11 @@ import { router as employeesRouter } from './routes/api/employees';
 import { router as registerRouter } from './routes/api/register';
 import { router as authRouter } from './routes/api/auth';
 import { router as refreshTokenRouter } from './routes/api/refresh';
+import { router as logoutRouter } from './routes/api/logout';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import corsOptions from './config/corsOptions';
+import credentials from './middleware/credentials';
 
 // creating an express app
 const app: Application = express();
@@ -24,6 +26,9 @@ const PORT = process.env.PORT || 3500;
 // custom logger
 app.use(requestLogger);
 
+// handle options credentials check before cors
+// and fetch cookes credentials requirement
+app.use(credentials);
 // Cors - Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
@@ -45,6 +50,7 @@ app.use('/', rootRouter);
 app.use('/register', registerRouter);
 app.use('/auth', authRouter);
 app.use('/refresh', refreshTokenRouter);
+app.use('/logout', logoutRouter);
 
 // JWT
 app.use(verifyJwt);

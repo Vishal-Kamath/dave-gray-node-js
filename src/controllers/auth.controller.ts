@@ -57,6 +57,8 @@ export const handleLogin = async (
     res.cookie('jwt', refreshToken, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
+      sameSite: 'none', // as client and server can be on different domain
+      secure: true,
     });
     res.json({ accessToken });
   } else {
