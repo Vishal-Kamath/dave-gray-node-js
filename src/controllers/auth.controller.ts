@@ -40,7 +40,7 @@ export const handleLogin = async (
     }
     const refreshToken = jwt.sign(
       { username: foundUser.username },
-      access_private,
+      refresh_private,
       { expiresIn: '1d', algorithm: 'RS256' }
     );
     const currentUser: User = {

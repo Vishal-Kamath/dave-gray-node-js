@@ -12,6 +12,8 @@ import { router as rootRouter } from './routes/root';
 import { router as employeesRouter } from './routes/api/employees';
 import { router as registerRouter } from './routes/api/register';
 import { router as authRouter } from './routes/api/auth';
+import { router as refreshTokenRouter } from './routes/api/refresh';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import corsOptions from './config/corsOptions';
 
@@ -32,6 +34,9 @@ app.use(express.urlencoded({ extended: false }));
 // parse json
 app.use(express.json());
 
+// middleware for cookies
+app.use(cookieParser());
+
 // serve static files
 app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
@@ -39,8 +44,11 @@ app.use('/', express.static(path.join(__dirname, '..', 'public')));
 app.use('/', rootRouter);
 app.use('/register', registerRouter);
 app.use('/auth', authRouter);
+app.use('/refresh', refreshTokenRouter);
 
+// JWT
 app.use(verifyJwt);
+
 app.use('/employees', employeesRouter);
 
 // 404
