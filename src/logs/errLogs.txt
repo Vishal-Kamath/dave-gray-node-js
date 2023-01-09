@@ -64,3 +64,32 @@ Error: not allowed by CORS
     at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:280:10)
     at requestLogger (D:\projects\dave-gray\node-js\src\middleware\logEvents.ts:33:3)
 
+09-Jan-2023	14:50:22	34fe373f-cc93-4e7f-90b0-c0892a3474f0	GET	undefined	/
+Error: ENOENT: no such file or directory, stat 'D:\projects\dave-gray\node-js\src\views\index.html'
+
+09-Jan-2023	15:11:14	6dcc6e89-70ef-44be-8f89-ad87ccfd6f77	GET	undefined	/api/employess
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:400:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (D:\projects\dave-gray\node-js\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\projects\dave-gray\node-js\node_modules\express\lib\response.js:174:12)
+    at D:\projects\dave-gray\node-js\src\server.ts:74:9
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+
+09-Jan-2023	15:11:48	7e52a8c5-7b48-472b-90bd-138e1c92f626	GET	undefined	/employess
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:400:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (D:\projects\dave-gray\node-js\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\projects\dave-gray\node-js\node_modules\express\lib\response.js:174:12)
+    at D:\projects\dave-gray\node-js\src\server.ts:74:9
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
+

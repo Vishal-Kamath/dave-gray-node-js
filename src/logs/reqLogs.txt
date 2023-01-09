@@ -39,3 +39,10 @@
 09-Jan-2023	14:32:42	b768dd62-d5f4-4a14-8cfb-6b0849985f53	GET	https://www.youtube.com	/
 09-Jan-2023	14:33:47	9cda2357-fd07-4ed3-b50b-fe6108f902d0	GET	undefined	/
 09-Jan-2023	14:33:47	5eb2b97f-133a-488a-8de6-55956291ef20	GET	undefined	/css/style.css
+09-Jan-2023	14:50:22	e04951f9-0f36-4e2d-8e64-6e0f53f0ba1b	GET	undefined	/
+09-Jan-2023	14:50:56	a292af80-0693-4cab-98d8-5821671a75d6	GET	undefined	/
+09-Jan-2023	14:50:56	1532f4fe-28c6-4819-98ba-6b1cb0b9cce7	GET	undefined	/css/style.css
+09-Jan-2023	15:11:14	9ed752f6-179a-4cc5-88f6-b92cbad337a8	GET	undefined	/api/employess
+09-Jan-2023	15:11:48	c25d5583-c516-44c7-a7a4-2fb215e31a86	GET	undefined	/employess
+09-Jan-2023	15:11:54	517fd202-bc69-4242-8562-a49f4888f0a9	GET	undefined	/employees
+09-Jan-2023	15:11:58	b7b000d2-38ee-40e4-b84a-221b4c0e64b5	GET	undefined	/employees/6

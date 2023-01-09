@@ -9,6 +9,9 @@ import { requestLogger } from './middleware/logEvents';
 import cors from 'cors';
 import { errorHandler } from './middleware/logEvents';
 
+import { router as rootRouter } from './routes/root';
+import { router as employeesRouter } from './routes/api/employees';
+
 // creating an express app
 const app: Application = express();
 const PORT = process.env.PORT || 3500;
@@ -52,12 +55,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // serve static files
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
-// Index.html
-app.get('^/$|/index(.html)?', (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
-});
+// Routes
+app.use('/', rootRouter);
+app.use('/employees', employeesRouter);
 
 // 404
 app.all('*', (req: Request, res: Response) => {
