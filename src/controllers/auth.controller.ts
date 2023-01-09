@@ -19,7 +19,6 @@ export const handleLogin = async (
   const match = await bcrypt.compare(password, foundUser.password);
   if (match) {
     const roles = Object.values(foundUser.roles);
-    console.log(roles);
     // create JWT
 
     // Access Token
