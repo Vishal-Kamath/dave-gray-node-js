@@ -8,7 +8,7 @@ import { Request, Response, NextFunction } from 'express';
 // main function to log events
 const logEvents = async (
   message: string,
-  logFileName: 'reqLogs.txt' | 'errLogs.txt'
+  logFileName: 'reqLogs.txt' | 'errLogs.txt' | 'eventLog.txt'
 ) => {
   const logPath = path.join(__dirname, '..', 'logs');
   const dateTime = format(new Date(), 'dd-MMM-yyyy\tHH:mm:ss');
@@ -20,6 +20,11 @@ const logEvents = async (
   } catch (err) {
     console.log(err);
   }
+};
+
+// log events in eventLogs.txt
+export const eventLogger = (message: string) => {
+  logEvents(`\t${message}\n`, 'eventLog.txt');
 };
 
 // log request in reqLogs.txt

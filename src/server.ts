@@ -6,11 +6,11 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 // imports
 import express, { Application, Request, Response, NextFunction } from 'express';
 import { requestLogger } from './middleware/logEvents';
-import cors from 'cors';
 import { errorHandler } from './middleware/logEvents';
-
 import { router as rootRouter } from './routes/root';
 import { router as employeesRouter } from './routes/api/employees';
+import cors from 'cors';
+import corsOptions from './config/corsOptions';
 
 // creating an express app
 const app: Application = express();
@@ -20,31 +20,6 @@ const PORT = process.env.PORT || 3500;
 app.use(requestLogger);
 
 // Cors - Cross Origin Resource Sharing
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://www.youtube.com',
-  `http://localhost:${PORT}`,
-];
-const node_env = process.env.NODE_ENV;
-const corsOptions: cors.CorsOptions = {
-  origin: (origin, callback) => {
-    // if development allow undefined
-    if (node_env === 'development' && origin === undefined) {
-      return callback(null, true);
-    }
-
-    // else reject undefined
-    if (origin === undefined) return callback(new Error('not allowed by CORS'));
-
-    // check allowed
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('not allowed by CORS'));
-    }
-  },
-  optionsSuccessStatus: 200,
-};
 app.use(cors(corsOptions));
 
 // Middleware

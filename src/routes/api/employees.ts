@@ -1,25 +1,26 @@
 import express, { Request, Response } from 'express';
-import path from 'path';
-import { employeesData } from '../../data/employees';
-
-const data = {
-  employees: employeesData,
-};
+import validateResource from '../../middleware/validateResource';
+import * as employeesController from './../../controllers/employees.controller';
+import {
+  employeeSchema,
+  employeeNameSchema,
+  employeeIdSchema,
+} from './../../schema/employee.schema';
 const router = express.Router();
 
 router
   .route('/')
-  .get((req: Request, res: Response) => {
-    res.json(data.employees);
-  })
-  .post((req: Request, res: Response) => {})
-  .put((req: Request, res: Response) => {})
-  .delete((req: Request, res: Response) => {});
+  .get(employeesController.getAllEmployees)
+  .post(
+    validateResource(employeeNameSchema),
+    employeesController.createNewEmployee
+  )
+  .put(validateResource(employeeSchema), employeesController.updateEmplyee)
+  .delete(
+    validateResource(employeeIdSchema),
+    employeesController.deleteEmployee
+  );
 
-// request with id param
-type IdRequest = Request<{ id: number }>;
-router.route('/:id').get((req: IdRequest, res: Response) => {
-  res.send(req.params.id);
-});
+router.route('/:id').get(employeesController.getEmployee);
 
 export { router };
