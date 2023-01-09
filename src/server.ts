@@ -9,6 +9,8 @@ import { requestLogger } from './middleware/logEvents';
 import { errorHandler } from './middleware/logEvents';
 import { router as rootRouter } from './routes/root';
 import { router as employeesRouter } from './routes/api/employees';
+import { router as registerRouter } from './routes/api/register';
+import { router as authRouter } from './routes/api/auth';
 import cors from 'cors';
 import corsOptions from './config/corsOptions';
 
@@ -35,6 +37,8 @@ app.use('/', express.static(path.join(__dirname, '..', 'public')));
 // Routes
 app.use('/', rootRouter);
 app.use('/employees', employeesRouter);
+app.use('/register', registerRouter);
+app.use('/auth', authRouter);
 
 // 404
 app.all('*', (req: Request, res: Response) => {

@@ -26,7 +26,19 @@ export const employeeIdSchema = z.object({
 
 // for PUT
 export const employeeSchema = z.object({
-  body: employeeIdSchema.shape.body.merge(employeeNameSchema.shape.body),
+  body: z.object({
+    id: z
+      .number({
+        required_error: 'id is required',
+      })
+      .gt(0),
+    firstname: z.string({
+      required_error: 'firstname is required',
+    }),
+    lastname: z.string({
+      required_error: 'lastname is required',
+    }),
+  }),
 });
 
 export type ReqEmployee = z.infer<typeof employeeSchema>;

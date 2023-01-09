@@ -5,7 +5,7 @@ import {
   ReqEmployeeId,
   ReqEmployeeName,
 } from '../schema/employee.schema';
-import { employeesData, Employee } from './../data/employees';
+import { employeesData, Employee } from '../model/employees';
 
 const data = {
   employees: employeesData,

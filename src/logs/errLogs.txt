@@ -562,3 +562,64 @@ ZodError: [
     at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
     at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:140:7)
 
+09-Jan-2023	20:02:57	5cd8197c-d508-46a8-b0c9-37f8c2d0e372
+ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "password"
+    ],
+    "message": "password is required"
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:9:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+
+09-Jan-2023	20:25:29	b6e69691-18c0-4e2e-aba2-6df7b5634d7d	POST	undefined	/auth
+SyntaxError: Unexpected token } in JSON at position 26
+    at JSON.parse (<anonymous>)
+    at parse (D:\projects\dave-gray\node-js\node_modules\body-parser\lib\types\json.js:89:19)
+    at D:\projects\dave-gray\node-js\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:204:9)
+    at invokeCallback (D:\projects\dave-gray\node-js\node_modules\raw-body\index.js:231:16)
+    at done (D:\projects\dave-gray\node-js\node_modules\raw-body\index.js:220:7)
+    at IncomingMessage.onEnd (D:\projects\dave-gray\node-js\node_modules\raw-body\index.js:280:7)
+    at IncomingMessage.emit (node:events:513:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+
+09-Jan-2023	20:25:34	8f7a6e28-26b1-40f9-bfb6-69f1c7f4713a
+ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "password"
+    ],
+    "message": "password is required"
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:9:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+
