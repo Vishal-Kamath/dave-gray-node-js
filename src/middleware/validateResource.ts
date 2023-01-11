@@ -1,10 +1,19 @@
 import { errorLogger } from './logEvents';
-import express, { NextFunction, Request, Response } from 'express';
-import { AnyZodObject } from 'zod';
+import { NextFunction, Request, Response } from 'express';
+import { z, AnyZodObject } from 'zod';
 
 const validateResource =
-  (schema: AnyZodObject) =>
+  (
+    paramsSchema: AnyZodObject,
+    bodySchema: AnyZodObject,
+    querySchema: AnyZodObject
+  ) =>
   (req: Request, res: Response, next: NextFunction) => {
+    const schema = z.object({
+      params: paramsSchema,
+      body: bodySchema,
+      query: querySchema,
+    });
     try {
       schema.parse({
         params: req.params,

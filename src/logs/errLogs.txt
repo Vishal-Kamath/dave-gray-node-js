@@ -691,3 +691,115 @@ ZodError: [
     at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
     at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
 
+11-Jan-2023	15:15:09	a89aaeee-06b4-490a-89fa-be9debf1938b
+ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "username"
+    ],
+    "message": "username is required"
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:18:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:346:12)
+
+11-Jan-2023	15:27:03	ba4ed336-8009-4374-b8d7-cfa3d2d69e21
+ZodError: [
+  {
+    "code": "custom",
+    "message": "not a valid id",
+    "path": [
+      "params",
+      "id"
+    ]
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:18:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at param (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:365:14)
+
+11-Jan-2023	15:28:31	ae87dc75-cd6f-434f-95c6-7bbbdca653a9
+ZodError: [
+  {
+    "code": "custom",
+    "message": "not a valid id",
+    "path": [
+      "params",
+      "id"
+    ]
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:18:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at param (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:365:14)
+
+11-Jan-2023	15:28:43	35ebacb7-a531-427d-a2a7-9a0e6fdf67aa
+ZodError: [
+  {
+    "code": "custom",
+    "message": "not a valid id",
+    "path": [
+      "params",
+      "id"
+    ]
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:18:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at param (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:365:14)
+
+11-Jan-2023	15:29:10	88c80026-aa62-419c-a036-1e9ae7f5dfb6
+ZodError: [
+  {
+    "code": "custom",
+    "message": "not a valid id",
+    "path": [
+      "params",
+      "id"
+    ]
+  }
+]
+    at handleResult (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:29:23)
+    at ZodObject.safeParse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:142:16)
+    at ZodObject.parse (D:\projects\dave-gray\node-js\node_modules\zod\lib\types.js:122:29)
+    at D:\projects\dave-gray\node-js\src\middleware\validateResource.ts:18:14
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\projects\dave-gray\node-js\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\projects\dave-gray\node-js\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:284:15
+    at param (D:\projects\dave-gray\node-js\node_modules\express\lib\router\index.js:365:14)
+

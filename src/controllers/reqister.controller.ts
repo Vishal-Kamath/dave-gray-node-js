@@ -5,7 +5,7 @@ import { ReqUserNamePwd } from '../schema/user.schema';
 import { User, userDb } from '../model/usersDb';
 
 export const handleNewUser = async (
-  req: Request<{}, {}, ReqUserNamePwd['body']>,
+  req: Request<{}, {}, ReqUserNamePwd>,
   res: Response
 ) => {
   const { username, password } = req.body;

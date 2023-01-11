@@ -4,6 +4,7 @@ import {
   ReqEmployee,
   ReqEmployeeId,
   ReqEmployeeName,
+  ReqEmployeeStringId,
 } from '../schema/employee.schema';
 import { employeesData, Employee } from '../model/employees';
 
@@ -22,7 +23,7 @@ export const getAllEmployees = (req: Request, res: Response) => {
 
 // POST
 export const createNewEmployee = (
-  req: Request<{}, {}, ReqEmployeeName['body']>,
+  req: Request<{}, {}, ReqEmployeeName>,
   res: Response
 ) => {
   const newEmployee: Employee = {
@@ -37,7 +38,7 @@ export const createNewEmployee = (
 
 // PUT
 export const updateEmplyee = (
-  req: Request<{}, {}, ReqEmployee['body']>,
+  req: Request<{}, {}, ReqEmployee>,
   res: Response
 ) => {
   const employee = data.employees.find((emp) => emp.id === req.body.id);
@@ -58,7 +59,7 @@ export const updateEmplyee = (
 
 // DELETE
 export const deleteEmployee = (
-  req: Request<{}, {}, ReqEmployeeId['body']>,
+  req: Request<{}, {}, ReqEmployeeId>,
   res: Response
 ) => {
   const employee = data.employees.find((emp) => emp.id === req.body.id);
@@ -78,7 +79,10 @@ export const deleteEmployee = (
 
 // route '/:id'
 // GET
-export const getEmployee = (req: Request<{ id: string }>, res: Response) => {
+export const getEmployee = (
+  req: Request<ReqEmployeeStringId>,
+  res: Response
+) => {
   const employee = data.employees.find(
     (emp) => emp.id === parseInt(req.params.id)
   );
@@ -86,6 +90,6 @@ export const getEmployee = (req: Request<{ id: string }>, res: Response) => {
   if (!employee)
     return res
       .status(400)
-      .json({ 'message': `Employees ID ${req.body.id} not found` });
+      .json({ 'message': `Employees ID ${req.params.id} not found` });
   res.json(employee);
 };

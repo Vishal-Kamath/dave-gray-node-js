@@ -6,7 +6,7 @@ import { ReqUserNamePwd } from '../schema/user.schema';
 import jwt from 'jsonwebtoken';
 
 export const handleLogin = async (
-  req: Request<{}, {}, ReqUserNamePwd['body']>,
+  req: Request<{}, {}, ReqUserNamePwd>,
   res: Response
 ) => {
   const { username, password } = req.body;
